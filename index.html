@@ -2523,7 +2523,7 @@ body.present-mode #present-arrows { display:flex !important; }
 
 <!-- NAV BAR -->
 <nav id="nav">
-  <div style="font-family:'Gilroy',sans-serif;font-weight:800;font-size:13px;color:rgba(255,255,255,0.28);letter-spacing:0.07em;">✦ Magic for Julien Doré</div>
+  <div style="font-family:'Gilroy',sans-serif;font-weight:800;font-size:13px;color:rgba(255,255,255,0.28);letter-spacing:0.07em;" data-en="✦ Magic for Julien Doré" data-fr="✦ Magic pour Julien Doré">✦ Magic for Julien Doré</div>
   <div style="display:flex;align-items:center;gap:20px;">
     <button class="nb" id="pb" onclick="prev()">&#8592;</button>
     <div id="dots"></div>
@@ -2558,7 +2558,7 @@ body.present-mode #present-arrows { display:flex !important; }
 <!-- Mobile language bar -->
 <div id="mobile-tap-zone" style="display:none;"></div>
 <div id="mobile-lang-bar" style="display:none;">
-  <span class="mlb-title">✦ Magic for Julien Doré</span>
+  <span class="mlb-title" data-en="✦ Magic for Julien Doré" data-fr="✦ Magic pour Julien Doré">✦ Magic for Julien Doré</span>
   <div class="mlb-btns">
     <button class="mlb-btn active" id="mlb-en">EN</button>
     <button class="mlb-btn" id="mlb-fr">FR</button>
@@ -3523,6 +3523,8 @@ function repositionLegendLines() {
 
 function setLang(lang) {
   currentLang = lang;
+  // The <title> is not an element the loop below reaches, so swap it here.
+  document.title = lang === 'fr' ? "Magic pour Julien Dor\u00e9" : "Magic for Julien Dor\u00e9";
   // Update toggle buttons
   const enBtn = document.getElementById('lang-en');
   const frBtn = document.getElementById('lang-fr');
