@@ -1,0 +1,13 @@
+# Test renders never ship
+index.test.html
+
+# Working material: Figma inputs, raw downloads and provenance notes stay local.
+# The repo is public, so it carries only what the page actually serves.
+Assets/source/
+Assets/covers/
+Assets/Merch/
+Assets/Frames/*.png
+!Assets/Frames/Deck Edits/
+Assets/julien-dore-centre.jpg
+
+.DS_Store
